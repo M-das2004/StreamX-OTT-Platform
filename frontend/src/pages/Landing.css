@@ -1,0 +1,856 @@
+/* ==========================================
+   LANDING PAGE
+========================================== */
+
+.landing-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #000;
+  color: white;
+}
+
+
+/* ==========================================
+   HERO SECTION
+========================================== */
+
+.landing-page .hero-section {
+  position: relative;
+  width: 100%;
+  height: 850px;
+  overflow: hidden;
+  background-color: #000;
+}
+
+
+/* ==========================================
+   HERO BACKGROUND
+========================================== */
+
+.landing-page .hero-background {
+  position: absolute;
+  inset: 0;
+
+  /* --hero-image is set inline from JSX (a title's poster from the catalog) */
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.65),
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.85)
+    ),
+    var(--hero-image);
+
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.02);
+  z-index: 0;
+}
+
+
+/* ==========================================
+   EXTRA DARK OVERLAY
+========================================== */
+
+.landing-page .hero-section::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 180px;
+  background: linear-gradient(transparent, #000);
+  z-index: 1;
+  pointer-events: none;
+}
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.landing-page .hero-header {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 10%;
+}
+
+
+/* ==========================================
+   BRAND LOGO
+========================================== */
+
+.landing-page .brand-logo {
+  color: #e50914;
+  font-size: 48px;
+  font-weight: 900;
+  letter-spacing: -3px;
+  line-height: 1;
+  text-shadow: 2px 2px 0 #8b0000;
+}
+
+
+/* ==========================================
+   HEADER RIGHT
+========================================== */
+
+.landing-page .header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+
+/* ==========================================
+   LANGUAGE BUTTON
+========================================== */
+
+.landing-page .language-btn {
+  height: 40px;
+  padding: 0 14px;
+  border: 1px solid #777;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.55);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.landing-page .language-btn:hover {
+  background-color: rgba(80, 80, 80, 0.7);
+}
+
+.landing-page .lang-icon,
+.landing-page .down-arrow {
+  font-size: 15px;
+  line-height: 1;
+}
+
+
+/* ==========================================
+   SIGN IN
+========================================== */
+
+.landing-page .sign-in-btn {
+  height: 40px;
+  padding: 0 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #e50914;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  transition: background-color 0.2s ease;
+}
+
+.landing-page .sign-in-btn:hover {
+  background-color: #f40612;
+}
+
+
+/* ==========================================
+   HERO CONTENT
+========================================== */
+
+.landing-hero-content {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  height: calc(100% - 100px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  margin-top: -40px;
+}
+
+.landing-hero-content h1 {
+  font-size: 64px;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  margin-bottom: 25px;
+  max-width: 850px;
+}
+
+.landing-hero-content h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 42px;
+}
+
+.landing-hero-content p {
+  font-size: 17px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+
+/* ==========================================
+   HERO FORM
+========================================== */
+
+.landing-page .hero-form {
+  display: flex;
+  width: 690px;
+  max-width: 100%;
+  gap: 10px;
+}
+
+.landing-page .hero-form input {
+  flex: 1;
+  height: 65px;
+  padding: 0 18px;
+  border: 1px solid #777;
+  border-radius: 5px;
+  background: rgba(20, 20, 20, 0.75);
+  color: white;
+  font-size: 17px;
+  outline: none;
+}
+
+.landing-page .hero-form input::placeholder {
+  color: #c8c8c8;
+}
+
+.landing-page .hero-form input:focus {
+  border-color: white;
+}
+
+.landing-page .hero-form button {
+  height: 65px;
+  padding: 0 28px;
+  border: none;
+  border-radius: 5px;
+  background-color: #e50914;
+  color: white;
+  font-size: 25px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.landing-page .hero-form button:hover {
+  background-color: #f40612;
+  transform: scale(1.02);
+}
+
+.landing-page .hero-form button span {
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 0;
+}
+
+
+/* ==========================================
+   SECTION HEADING
+========================================== */
+
+.landing-page section h2 {
+  font-size: 24px;
+  margin-bottom: 18px;
+}
+
+
+/* ==========================================
+   TRENDING SECTION
+========================================== */
+
+.landing-page .trending-section {
+  width: 100%;
+  padding: 35px 8% 0;
+}
+
+.landing-page .trending-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.landing-page .trending-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  position: relative;
+  overflow-x: auto;
+  overflow-y: visible;
+  padding: 20px 30px 45px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  flex-wrap: nowrap;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;
+}
+
+.landing-page .trending-container::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* ==========================================
+   TRENDING CARD
+========================================== */
+
+.landing-page .trending-card {
+  position: relative;
+  flex: 0 0 165px;
+  width: 165px;
+  height: 220px;
+  border-radius: 8px;
+  overflow: visible;
+  cursor: pointer;
+  display: block;
+  transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1;
+}
+
+.landing-page .trending-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+  transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+.landing-page .trending-card:hover {
+  transform: scale(1.08);
+  z-index: 20;
+}
+
+.landing-page .trending-card:hover img {
+  filter: brightness(0.7);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.25);
+}
+
+.landing-page .trending-card::after {
+  content: attr(data-title);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 35px 8px 10px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.95));
+  border-radius: 0 0 8px 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.landing-page .trending-card:hover::after {
+  opacity: 1;
+}
+
+
+/* ==========================================
+   RANK NUMBER
+========================================== */
+
+.landing-page .rank {
+  position: absolute;
+  left: -15px;
+  bottom: -5px;
+  font-size: 80px;
+  line-height: 0.8;
+  font-weight: 900;
+  color: #000;
+  -webkit-text-stroke: 2px white;
+  z-index: 25;
+  pointer-events: none;
+  transition: transform 0.3s ease;
+}
+
+.landing-page .trending-card:hover .rank {
+  transform: scale(1.05);
+}
+
+
+/* ==========================================
+   SCROLL BUTTONS
+========================================== */
+
+.landing-page .scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 90px;
+  border: none;
+  border-radius: 8px;
+  background-color: rgba(30, 30, 30, 0.95);
+  color: white;
+  font-size: 42px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.landing-page .scroll-btn:hover {
+  background-color: #444;
+  transform: translateY(-50%) scale(1.05);
+}
+
+.landing-page .previous-btn {
+  left: 0;
+}
+
+.landing-page .next-btn {
+  right: 0;
+}
+
+
+/* ==========================================
+   REASONS SECTION
+========================================== */
+
+.landing-page .reasons-section {
+  margin-top: 15px;
+  padding: 20px 8% 60px;
+}
+
+.landing-page .reasons-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.landing-page .reason-card {
+  min-height: 180px;
+  padding: 25px 18px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #202044, #181223);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.landing-page .reason-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.12);
+}
+
+.landing-page .reason-card h3 {
+  font-size: 18px;
+  margin-bottom: 18px;
+  line-height: 1.25;
+}
+
+.landing-page .reason-card p {
+  color: #bcb8c5;
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+/*.hero-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+
+.language-dropdown {
+  position: relative;
+}
+
+
+.language-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 9px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.language-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+
+.down-arrow {
+  margin-left: 5px;
+  transition: transform 0.2s ease;
+}
+
+
+.language-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 160px;
+  background: #181818;
+  border: 1px solid #333;
+  border-radius: 6px;
+  padding: 6px 0;
+  z-index: 1000;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+
+.language-option {
+  width: 100%;
+  padding: 10px 15px;
+  border: none;
+  background: transparent;
+  color: white;
+  text-align: left;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+
+.language-option:hover {
+  background: #333;
+}
+
+
+.language-option.active {
+  background: #e50914;
+  color: white;
+}
+
+.sign-in-btn {
+  text-decoration: none;
+  color: white;
+  background: #e50914;
+  padding: 9px 18px;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+.sign-in-btn:hover {
+  background: #f40612;
+}*/
+
+
+/* ==========================================
+   LANGUAGE DROPDOWN
+========================================== */
+
+.language-dropdown {
+  position: relative;
+}
+
+/* Language Button */
+
+.language-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 9px 14px;
+
+  background: rgba(0, 0, 0, 0.55);
+  color: white;
+
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 4px;
+
+  font-size: 15px;
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.language-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Language Icon */
+
+.lang-icon {
+  font-size: 17px;
+}
+
+/* Selected Language */
+
+.selected-language {
+  min-width: 60px;
+  text-align: left;
+}
+
+/* Arrow */
+
+.down-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-left: 3px;
+
+  transition: transform 0.2s ease;
+}
+
+/* ==========================================
+   LANGUAGE MENU
+========================================== */
+
+.language-menu {
+  position: absolute;
+
+  top: calc(100% + 8px);
+  right: 0;
+
+  width: 170px;
+
+  background: #181818;
+
+  border: 1px solid #333;
+  border-radius: 5px;
+
+  padding: 6px 0;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+
+  z-index: 9999;
+}
+
+/* ==========================================
+   LANGUAGE OPTION
+========================================== */
+
+.language-option {
+  display: block;
+
+  width: 100%;
+
+  padding: 11px 16px;
+
+  background: transparent;
+  color: white;
+
+  border: none;
+
+  text-align: left;
+
+  font-size: 14px;
+
+  cursor: pointer;
+
+  transition: background 0.2s ease;
+}
+
+.language-option:hover {
+  background: #333;
+}
+
+/* Selected language */
+
+.language-option.active {
+  background: #e50914;
+  color: white;
+}
+
+.language-option.active:hover {
+  background: #f40612;
+}
+
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 900px) {
+  .landing-page .hero-section {
+    height: 750px;
+  }
+
+  .landing-page .hero-header {
+    padding: 25px 5%;
+  }
+
+  .landing-page .brand-logo {
+    font-size: 40px;
+  }
+
+  .landing-hero-content h1 {
+    font-size: 48px;
+  }
+
+  .landing-hero-content h3 {
+    font-size: 20px;
+  }
+
+  .landing-page .trending-section {
+    padding: 30px 5% 0;
+  }
+
+  .landing-page .reasons-section {
+    padding: 20px 5% 50px;
+  }
+
+  .landing-page .reasons-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .landing-page .trending-card {
+    flex-basis: 150px;
+    width: 150px;
+    height: 205px;
+  }
+
+  .landing-page .trending-container {
+    gap: 20px;
+  }
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 600px) {
+  .landing-page .hero-section {
+    height: 650px;
+  }
+
+  .landing-page .hero-header {
+    padding: 22px 20px;
+  }
+
+  .landing-page .brand-logo {
+    font-size: 30px;
+    letter-spacing: -2px;
+  }
+
+  .landing-page .header-right {
+    gap: 8px;
+  }
+
+  .landing-page .language-btn {
+    font-size: 13px;
+    padding: 0 8px;
+  }
+
+  .landing-page .sign-in-btn {
+    height: 36px;
+    padding: 0 12px;
+    font-size: 13px;
+  }
+
+  .landing-hero-content {
+    padding: 0 20px;
+    margin-top: -20px;
+  }
+
+  .landing-hero-content h1 {
+    font-size: 34px;
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+
+  .landing-hero-content h3 {
+    font-size: 17px;
+    margin-bottom: 30px;
+  }
+
+  .landing-hero-content p {
+    font-size: 15px;
+    line-height: 1.4;
+    margin-bottom: 15px;
+  }
+
+  .landing-page .hero-form {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .landing-page .hero-form input {
+    height: 52px;
+    font-size: 15px;
+  }
+
+  .landing-page .hero-form button {
+    height: 52px;
+    align-self: center;
+    font-size: 18px;
+    padding: 0 20px;
+  }
+
+  .landing-page .hero-form button span {
+    font-size: 26px;
+  }
+
+  .landing-page section h2 {
+    font-size: 20px;
+  }
+
+  .landing-page .trending-section {
+    padding: 25px 20px 0;
+  }
+
+  .landing-page .trending-container {
+    gap: 20px;
+    padding: 20px 20px 40px;
+  }
+
+  .landing-page .trending-card {
+    flex: 0 0 135px;
+    width: 135px;
+    height: 190px;
+  }
+
+  .landing-page .rank {
+    font-size: 65px;
+    left: -12px;
+  }
+
+  .landing-page .scroll-btn {
+    display: none;
+  }
+
+  .landing-page .reasons-section {
+    padding: 20px 20px 40px;
+  }
+
+  .landing-page .reasons-container {
+    grid-template-columns: 1fr;
+  }
+
+  .landing-page .reason-card {
+    min-height: 150px;
+  }
+
+  .landing-page .trending-card:hover {
+    transform: scale(1.04);
+  }
+}
